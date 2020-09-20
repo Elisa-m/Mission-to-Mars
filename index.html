@@ -16,11 +16,11 @@
       <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-primary btn-xs" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
-      <div class="row" id="mars-news">
-        <div class="col-md-12">
+      <div class="row img-thumbnail center-block" id="mars-news">
+        <div class="col-xs-12 col-md-12">
           <div class="media">
             <div class="media-body">
               <h2>Latest Mars News</h2>
@@ -31,16 +31,16 @@
         </div>
       </div>
       <!-- Section for Featured Image and Facts table -->
-      <div class="row" id="mars-featured-image">
-        <div class="col-md-8">
+      <div class="row img-thumbnail center-block" id="mars-featured-image">
+        <div class="col-xs-12 col-md-8">
           <h2>Featured Mars Image</h2>
           <img
             src="{{ mars.featured_image }}"
-            class="img-responsive"
+            class="img-thumbnail"
             alt="Responsive image"
           />
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-12 col-md-4 center-block">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
             <h4>Mars Facts</h4>
@@ -49,22 +49,20 @@
         </div>
       </div>
       <!-- Section for img_url and title -->
-      <div class="row" id="mars-hemispheres">
-        <div class="col-md-12">
-          <h2>Mars Hemispheres</h2>
-            <ul>
-            {% for hemisphere in mars.hemisphere_data %}
-              <div class="col-md-6" id="mars-hemispheres-unique">
-                <img
-                  src="{{ hemisphere.img_url }}"
-                  class="img-responsive"
-                  alt="Responsive image"
-                />
-                <span class="subtitle" style="float:left">{{hemisphere.title}}</span>
-              </div>
-            {% endfor %}
-            </ul>
-        </div>
+      <div class="col-xs-12 col-md-12 img-thumbnail center-block" id="mars-hemispheres">
+        <h2 style="text-align:center">Mars Hemispheres</h2>
+        <ul>
+        {% for hemisphere in mars.hemisphere_data %}
+          <figure class="col-xs-6 col-md-3 item img-thumbnail center-block" id="mars-hemispheres-unique">
+            <img
+              src="{{ hemisphere.img_url }}"
+              class="img-thumbnail"
+              alt="Responsive image"
+            />
+            <h6 class="caption">{{hemisphere.title}}</h6>
+          </figure>
+        {% endfor %}
+        </ul>
       </div>
     </div>
   </body>
