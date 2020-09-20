@@ -91,7 +91,7 @@ def hemisphere_data(browser):
             img_url = img_soup.select_one("ul li a").get("href")
         
             # Add keys and values to dictionary
-            hemispheres = {'img_url':[img_url],'title':[hemisphere_name]}
+            hemispheres = {'img_url':img_url,'title':hemisphere_name}
         
             # Add the dictionary to hemisphere_image_urls list
             hemisphere_image_urls.append(hemispheres)
