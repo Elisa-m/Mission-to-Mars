@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 # This route, @app.route("/"), tells Flask what to display when we're looking at the home page
 @app.route("/")
 def index():
-    # Uses PyMongo to find the "mars" collection in our database
+   # Uses PyMongo to find the "mars" collection in our database
    mars = mongo.db.mars.find_one()
    # index.html (index.html is the default HTML file that we'll use to display the content we've scraped).
    # This means that when we visit our web app's HTML page, we will see the home page.
